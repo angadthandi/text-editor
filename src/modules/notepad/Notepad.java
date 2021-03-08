@@ -79,9 +79,7 @@ public class Notepad {
         this.undoStack.push(copy);
         // copy.clear();
 
-        for (int i=n; i<l-1; i++) {
-            this.allContent.add(i, this.allContent.get(i+1));
-        }
+        this.allContent.remove(n-1);
 
         return true;
     }
@@ -100,7 +98,7 @@ public class Notepad {
         ArrayList<String> tmp = new ArrayList<String>();
         int c = 0;
         for (int i=0; i<l; i++) {
-            if (i >= n || i <= m) {
+            if (i >= n-1 && i <= m-1) {
                 continue;
             }
 
@@ -140,18 +138,19 @@ public class Notepad {
         this.undoStack.push(copy);
         // copy.clear();
 
-        int bl = this.buffer.size();
+        // int bl = this.buffer.size();
 
-        int c = n-1;
-        for (int i=0; i<bl; i++) {
-            if (c < l) {
-                this.allContent.add(c, this.buffer.get(i));
-            } else {
-                this.allContent.add(this.buffer.get(i));
-            }
+        // int c = n-1;
+        // for (int i=0; i<bl; i++) {
+        //     if (c < l) {
+        //         this.allContent.add(c, this.buffer.get(i));
+        //     } else {
+        //         this.allContent.add(this.buffer.get(i));
+        //     }
 
-            c++;
-        }
+        //     c++;
+        // }
+        this.allContent.addAll(n-1, this.buffer);
 
         return true;
     }

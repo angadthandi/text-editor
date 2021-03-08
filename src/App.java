@@ -26,5 +26,42 @@ public class App {
         notepad.PrintDebugLine("redo");
         notepad.Redo();
         notepad.Display();
+
+        notepad.PrintDebugLine("redo again");
+        notepad.Redo();
+        notepad.Display();
+
+        notepad.PrintDebugLine("delete 1st");
+        notepad.Delete(1);
+        notepad.Display();
+
+        notepad.PrintDebugLine("undo");
+        notepad.Undo();
+        notepad.Display();
+
+        notepad.PrintDebugLine("undo again");
+        notepad.Undo();
+        notepad.Display();
+
+        notepad.PrintDebugLine("delete 1 to 2");
+        notepad.Delete(1, 2);
+        notepad.Display();
+
+        notepad.PrintDebugLine("undo");
+        notepad.Undo();
+        notepad.Display();
+
+        notepad.PrintDebugLine("copy 1 to 2 & paste on 3");
+        notepad.Copy(1, 2);
+        notepad.Paste(3);
+        notepad.Display();
+
+        notepad.PrintDebugLine("undo");
+        notepad.Undo();
+        notepad.Display();
+
+        notepad.PrintDebugLine("redo");
+        notepad.Redo();
+        notepad.Display();
     }
 }
